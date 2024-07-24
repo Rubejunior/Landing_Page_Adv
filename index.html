@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GS Advogados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="./logo-favicon.ico" type="images/ico">
+    <style>
+        /* Paleta de cores */
+:root {
+    --whatsapp-button: #bb9684;
+    --header-bg: #3a465c;
+    --banner-bg: #3a465c;
+    --section-bg-light: #f0f0f0;
+    --section-bg-dark: #3a465c;
+    --text-light: #ffffff;
+    --text-dark: #000000;
+    --footer-text: #bb9684;
+    --text-blue: #007bff; /* Adicionando a cor azul */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--section-bg-light);
+}
+
+h2 {
+    margin: 0;
+    padding: 1px;
+    width: 50%;
+    height: 20px;
+}
+
+.App-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--header-bg);
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.App-header.scrolled {
+    background-color: rgba(58, 70, 92, 0.9);
+}
+
+.whatsapp-button {
+    background-color: transparent;
+    border: 1px solid var(--whatsapp-button);
+    color: var(--whatsapp-button);
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.whatsapp-button:hover {
+    background-color: var(--whatsapp-button);
+    color: var(--header-bg);
+}
+
+.banner-section {
+    background-color: var(--banner-bg);
+    padding: 0;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.section {
+    padding: 1rem 0;
+    border-radius: 10px;
+}
+
+.section-light {
+    background-color: var(--section-bg-light);
+    color: var(--text-dark);
+}
+
+.section-light img {
+    border-radius: 80px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.section-light img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-light section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    animation: fadeInSection 1s ease-in-out;
+}
+
+.section-dark {
+    background-color: var(--section-bg-dark);
+    color: var(--text-light);
+    border-radius: 10px;
+}
+
+footer {
+    background-color: var(--section-bg-dark);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 1rem 0;
+    border-radius: 10px;
+}
+
+footer img {
+    width: 200px;
+}
+
+#scrollTop {
+    position: fixed;
+    bottom: -50px;
+    right: 20px;
+    background-color: var(--whatsapp-button);
+    color: var(--header-bg);
+    padding: 0.5rem;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#scrollTop.show-scroll {
+    bottom: 20px;
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .swiper-slide img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.whatsapp-button:hover {
+    animation: pulse 1s infinite;
+}
+
+.whatsapp-button-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.swiper-slide {
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.parallax {
+    background: url('path/to/your/image.jpg') no-repeat fixed;
+    background-size: cover;
+    height: 500px;
+}
+
+.image-adv {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.image-adv:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+}
+
+/* Novo CSS para section-dark-com */
+.section-dark-com {
+    background-color: var(--section-bg-dark);
+    color: var(--text-blue);
+    font-size: larger;
+    position: relative;
+    overflow: hidden;
+}
+
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-NZDH8CQ7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'GTM-NZDH8CQ7'); 
+    </script>
+    <!-- Facebook Pixel -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID'); // Substitua YOUR_PIXEL_ID pelo seu ID do Pixel do Facebook
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" />
+    </noscript>
+</head>
+
+<body>
+    <header class="App-header">
+        <a href="https://wa.me/55dddnumero" class="whatsapp-button"><i class="fa fa-whatsapp"></i> WHATSAPP</a>
+    </header>
+
+    #pode adicioanr outros Banners, certifique-se que o json de animação swiper está funcionando.  
+    <section class="banner-section">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="images/banner-mobile1.png">
+                        <img src="images/banner-desk01.png" alt="Banner 1">
+                    </picture>
+                </div>
+               
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <center>
+            <img src="images/adv-image.jpg" alt="Advogada Patrícia Machado" style="border-radius: 80%;" width="250"
+                height="250">
+            <p style="font-weight: bold;">
+                Apresentação pessoal aqui.
+            </p>
+        </center>
+    </section 
+    
+
+    #comentários facebook altere o conteúdo dos comentários logo abaixo. 
+    #as imagens foram geradaas por inteligência artificial, qualquer semelhança é mera coencidência. 
+
+    <section>
+        <style>
+            .comment-section {
+                font-family: 'Roboto', sans-serif;
+                background: linear-gradient(270deg, #3a465c, #3a465c);
+                color: #1E1E1E;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 0;
+            }
+
+            .container {
+                width: 950px;
+                background: #FFFCFC;
+                border-radius: 12px;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                position: relative;
+            }
+
+            .facebook-logo {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 30px;
+            }
+
+            .comment {
+                margin: 20px 0;
+                display: flex;
+                align-items: flex-start;
+            }
+
+            .comment img {
+                border-radius: 50%;
+                width: 50px;
+                margin-right: 20px;
+            }
+
+            .comment-content {
+                max-width: 900px;
+            }
+
+            .comment-header {
+                color: #365899;
+                font-weight: 600;
+            }
+
+            .comment-body {
+                margin-top: 10px;
+            }
+
+            .comment-footer {
+                color: #93979F;
+                font-size: 11.5px;
+                margin-top: 5px;
+            }
+        </style>
+        <section class="comment-section">
+            <div class="container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                    alt="Facebook Logo" class="facebook-logo">
+                <h1>24 Comentários</h1>
+                <hr style="border-color: #DEDEDEF5;">
+
+                <!-- Comentário 1 -->
+                <div class="comment">
+                    <img src="images/avatar-1.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">Emilia Vieira disse:</div>
+                        <div class="comment-body">
+                            <p>Muito satisfeita com o trabalho de vocês, realmente são um dos melhores escritórios
+                                trabalhistas de Goiânia. Sempre indico vocês.</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 3 min</div>
+                    </div>
+                </div>
+
+                <!-- Respostas ao Comentário 1 -->
+                <div class="comment" style="margin-left: 50px;">
+                    <img src="images/avatar-6treter.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">João Venancio Camarão disse:</div>
+                        <div class="comment-body">
+                            <p>Concordo com você, Emilia! O atendimento é excelente. Que Deus continue abençoando toda
+                                equipe de vocês para que continuem ajudando os trabalhadores, porque tem muita coisa
+                                errada por ai.</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 2 min</div>
+                    </div>
+                </div>
+                <div class="comment" style="margin-left: 50px;">
+                    <img src="images/avatar-1.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">Emilia Vieira disse:</div>
+                        <div class="comment-body">
+                            <p>Sim, João! Graças a Deus existe justiça e conseguimos a nossa!!!.</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 1 min</div>
+                    </div>
+                </div>
+
+                <!-- Comentário 2 -->
+                <div class="comment">
+                    <img src="images/avatar-2.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">Juliana Aparecida disse:</div>
+                        <div class="comment-body">
+                            <p>Eu todo dia falo aqui em casa o quanto sou feliz por ter encontrado o site desse
+                                escritório, advogados honestos assim é muito raro, eu já estava desacreditada sobre o
+                                meu processo, mas Deus colocou vocês no meu caminho. Obrigada</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 4 min</div>
+                    </div>
+                </div>
+
+                <!-- Respostas ao Comentário 2 -->
+                <div class="comment" style="margin-left: 50px;">
+                    <img src="images/avatar-12.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">Pedro Silva disse:</div>
+                        <div class="comment-body">
+                            <p>Graças a você Juliana hehehe, achou eles e indicou para todos nós aqui, nunca imaginava
+                                ser tão bem atendido e não acreditava que seria possível reaver meus direitos, preciso
+                                nem falar o porque né Juliana, você sabe oque passamos. Obrigado GSM!!!</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 3 min</div>
+                    </div>
+                </div>
+                <div class="comment" style="margin-left: 50px;">
+                    <img src="images/avatar-2.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">Juliana Aparecida disse:</div>
+                        <div class="comment-body">
+                            <p>Exatamente, Pedro! Só Nós e Deus sabemos e a justiça foi feita!!.</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 2 min</div>
+                    </div>
+                </div>
+
+                <!-- Comentário 3 -->
+                <div class="comment">
+                    <img src="images/avatar-3.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">João Ribeiro disse:</div>
+                        <div class="comment-body">
+                            <p>Super recomendo, se eu pudesse dava nota mil, nota um milhão! Melhores advogados
+                                trabalhistas, SEM DÚVIDAS!!!</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 8 min</div>
+                    </div>
+                </div>
+
+                <!-- Comentário 4 -->
+                <div class="comment">
+                    <img src="images/avatar-4.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">Renato Teixeira disse:</div>
+                        <div class="comment-body">
+                            <p>Parece até mentira quando eu conto para meus amigos o quão rápido foi meu processo e quão
+                                claro e transparente vocês foram comigo. Gratidão. Obrigado!</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 7 min</div>
+                    </div>
+                </div>
+
+                <!-- Comentário 4 -->
+
+                <div class="comment">
+                    <img src="images/avatar-14.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">Ruth Cristina disse:</div>
+                        <div class="comment-body">
+                            <p>Passei por muita dificuldade, até fome eu passei depois do acidente que sofri indo para
+                                empresa, e não me deram nenhum suporte. Mas a justiça foi feita. Obrigado a todos do
+                                escritório GSM advogados.</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 9 min</div>
+                    </div>
+                </div>
+                <!-- Comentário 5 -->
+                <div class="comment">
+                    <img src="images/avatar-5.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">Rafael Coutinho Lima disse:</div>
+                        <div class="comment-body">
+                            <p>Parabés a todos os advogados de vocês, Dra Mariana, Dr. Renato e tantos outros, sempre
+                                fui muito bem tratado. Obrigado e deus abençoe o trabalho de vocês!</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 8 min</div>
+                    </div>
+                </div>
+
+                <!-- Comentário 6 -->
+                <div class="comment">
+                    <img src="images/avatar-6.png" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">Viviane Sardinha disse:</div>
+                        <div class="comment-body">
+                            <p>Eu tinha falado com outros advogados, mas quando vi aqui tanta recomendação e também
+                                depois de conversar com vocês ví toda seriedade e o porque tantos clientes fazem questão
+                                de indicar o trabalho de vocês.</p>
+                        </div>
+                        <div class="comment-footer">Responder · Curtir · Seguir · 9 min</div>
+                    </div>
+                </div>
+        </section>
+
+
+        <section class="section section-light office-section">
+            
+            #descrição sobre o negócio.
+            
+            <center>
+                <h2>Nosso Escritório</h2>
+                <p> Explique aqui o sobre seu negócio/ escritório.   </p>
+            </center>
+
+
+        </section>
+
+        <footer>
+            <center>
+                <h2>Localização</h2>
+                <p>Bairro - Goiânia - GO, Brasil</p>
+                <img src="images/logo-gsm500x500.png" alt="Logo">
+                <p>Todos direitos @ 2024 criado por: www.rubemdatascience.com</p>
+            </center>
+        #mative os scripts juntos para facilitar a edição por alguem mais iniciante, se for separar certifique-se em referência-los corretamente, deixei alguns na pasta JS.
+        
+        </footer>
+
+        <!-- Botão de voltar ao topo -->
+        <a href="#" id="scrollTop"><i class="fa fa-arrow-up"></i></a>
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const header = document.querySelector('.App-header');
+                const scrollTopBtn = document.getElementById('scrollTop');
+                const whatsappButton = document.querySelector('.whatsapp-button');
+                const tooltip = document.createElement('span');
+                tooltip.className = 'tooltip';
+                tooltip.innerText = ' ONLINE'; 
+                whatsappButton.appendChild(tooltip);
+            
+                whatsappButton.addEventListener('mouseover', function () {
+                    tooltip.style.visibility = 'visible';
+                    tooltip.style.opacity = '1';
+                });
+            
+                whatsappButton.addEventListener('mouseout', function () {
+                    tooltip.style.visibility = 'hidden';
+                    tooltip.style.opacity = '0';
+                });
+            
+                const toggleHeaderClass = () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                };
+            
+                const toggleScrollTopBtn = () => {
+                    if (window.scrollY >= 560) {
+                        scrollTopBtn.classList.add("show-scroll");
+                    } else {
+                        scrollTopBtn.classList.remove("show-scroll");
+                    }
+                };
+            
+                window.addEventListener('scroll', function () {
+                    toggleHeaderClass();
+                    toggleScrollTopBtn();
+                });
+            
+                const arrowDown = document.createElement('div');
+                arrowDown.classList.add('arrow-down');
+                arrowDown.innerHTML = '&darr;';
+                document.body.appendChild(arrowDown);
+            
+                arrowDown.addEventListener('click', function () {
+                    window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+                });
+            
+                const observerOptions = {
+                    threshold: 0.8
+                };
+            
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+            
+                const elements = document.querySelectorAll('.animate-on-scroll');
+                elements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+            
+            function setCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+            
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            }
+
+            
+            function eraseCookie(name) {
+                document.cookie = name + '=; Max-Age=-99999999;';
+            }
+            
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    fetch('https://seuservidor.com/salvar-ip', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ ip: data.ip })
+                    });
+                });
+            
+            (function (a, m, o, c, r, m) {
+                a[m] = { id: "", hash: "", locale: "pt", setMeta: function (p) { this.params = (this.params || []).concat([p]) } };
+                a[o] = a[o] || function () { (a[o].q = a[o].q || []).push(arguments) };
+                var d = a.document, s = d.createElement('script'); s.async = true; s.id = m + '_script'; s.src = 'https://gso.kommo.com/js/button.js'; d.head && d.head.appendChild(s)
+            })(window, 0, 'crmPlugin', 0, 0, 'crm_plugin');
+            
+
+        </script>
+#explicando os dois scripts acima. O script (a, m, o, c, r, m) é uma aplicação fornecida pronta pela CRM KOMMO, se você não tem precisa remover e substituir por um script para whatsapp-button ou contato. O script komo vem pronto eu removi o id: "isso", hash"isso" para preservar dados do cliente. Mas é um copia e cola, basta substituir.
+#Acima tem o script: fetch('https://api.ipify.org?format=json') veja a explicação e se é útil para você, caso não for, exclua. Ele tem a função de salvar os IP's dos usuários que acessam o site, é preciso ter um servidor para salvar os dados. É uma aplicação útil para proteção do site, podendo bloquear IP's suspeitos, e mais ainda para campanhas ads, IP'S com mais der uma certa quantidade de acessos eu bloqueio nas campanhas do GOOGLE e FACEBOOK para evitar cliques de ROBOS e demais outros casos não necessários. Cada caso é um caso, essa é uma pagina de venda com principal objetivo de capturar o cliente no primeiro acesso ou no máximo segundo (eu nesse caso bloqueioo todos ip's que acessaram o site pelo menos uma vez em todas as campanhas ads)
+</body>
+
+</html>

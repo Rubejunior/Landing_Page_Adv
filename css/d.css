@@ -1,0 +1,239 @@
+/*==================== BASE STYLES ====================*/
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .App-header {
+    background-color: #3a465c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+  
+  .App-header.scrolled {
+    transform: translateY(-10px);
+  }
+  
+  .whatsapp-button {
+    background: transparent;
+    border: 2px solid #bb9684;
+    color: #bb9684;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .banner-section {
+    margin-top: 60px;
+    background-color: #3a465c;
+    color: white;
+  }
+  
+  .contact-section {
+    background-color: #f2f2f2;
+    color: black;
+    padding: 50px 20px;
+  }
+  
+  .contact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .contact-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 0%; /* Mantendo a imagem quadrada */
+  }
+  
+  .contact-text {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .testimonial-section {
+    background-color: #3a465c;
+    padding: 50px 20px;
+  }
+  
+  .testimonial-section h2 {
+    font-size: 2em; /* Tamanho maior para o título */
+    color: #bb9684;
+  }
+  
+  .google-logo {
+    margin-bottom: 20px;
+  }
+  
+  .google-logo img {
+    width: 50px; /* Tamanho reduzido para a logo */
+  }
+  
+  .rating {
+    margin-bottom: 20px;
+  }
+  
+  .rating .fa-star {
+    color: #ffcc00;
+    margin: 0 5px;
+  }
+  
+  .testimonial-container {
+    position: relative;
+    max-width: 100%;
+  }
+  
+  .testimonial {
+    display: none;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+  
+  .testimonial.fade {
+    display: block;
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  
+  .testimonial-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .swiper-button-prev, .swiper-button-next {
+    color: white;
+  }
+  
+  .office-section {
+    background-color: #f2f2f2;
+    color: black;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .office-section h2 {
+    font-size: 2em; /* Tamanho maior para o título */
+    margin-bottom: 20px;
+  }
+  
+  .footer {
+    background-color: #3a465c;
+    padding: 20px 0;
+    color: white;
+  }
+  
+  .footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer h4 {
+    margin-bottom: 10px;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  .footer-logo {
+    margin-top: 20px;
+  }
+  
+  .footer-rights {
+    margin-top: 10px;
+  }
+  
+  .btn-social {
+    color: white;
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /*==================== RESPONSIVE STYLES ====================*/
+  @media (min-width: 768px) {
+    .contact-content {
+      text-align: left;
+    }
+  
+    .contact-image {
+      margin: 0;
+    }
+  
+    .testimonial {
+      display: flex;
+    }
+  
+    .testimonial-image {
+      margin-right: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-content {
+      flex-direction: column;
+    }
+  
+    .contact-image {
+      margin: 0 0 20px 0;
+    }
+  
+    .testimonial {
+      display: block;
+    }
+  
+    .testimonial-image {
+      margin: 0 auto 20px;
+    }
+  }
+  
+  /*==================== SCROLL EFFECTS ====================*/
+  .scrollTop {
+    position: fixed;
+    right: 20px;
+    bottom: -20px;
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 100;
+  }
+  
+  .show-scroll {
+    bottom: 20px;
+    opacity: 1;
+  }
+  
+  /*==================== ADDITIONAL STYLES ====================*/
+  .carousel-item img {
+    width: 100%;
+  }
+  
+  .swiper-container {
+    width: 100%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: #bb9684;
+  }
+  
